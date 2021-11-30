@@ -1,7 +1,7 @@
 import './App.css';
 import MyCard from './components/card';
 import React from 'react';
-import ClickCount from './components/click-count';
+import Header from './components/header';
 
 let rememberedCards = [
   {
@@ -78,12 +78,11 @@ class App extends React.Component {
     this.setState({ cards: searchResults });
   }
 
-
   render() {
     const noCards = this.state.cards.length < 1;
     return (
       <>
-        <ClickCount {...this.state} runSearch={this.runSearch} />
+        <Header {...this.state} runSearch={this.runSearch} />
         {noCards && <div className='d-flex justify-content-center'>No cards found</div> /*In case no cards in list*/}
         <div className="App container">
           {this.state.cards.map((card, i) =>
