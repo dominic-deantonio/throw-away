@@ -69,7 +69,7 @@ class App extends React.Component {
         rememberedCards = [...this.state.cards]; // Save the state of the cards before the search
 
       // Find the card using the query
-      searchResults = rememberedCards.filter(card => card.title.toLowerCase().startsWith(queryString.toLowerCase()));
+      searchResults = rememberedCards.filter(card => card.title.toLowerCase().includes(queryString.toLowerCase()));
     } else {
       // If here, the queryString was erased. The search is over
       searchResults = [...rememberedCards]; // Set the search results to whatever the value was before the search
